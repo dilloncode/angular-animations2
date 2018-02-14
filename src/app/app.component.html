@@ -20,7 +20,7 @@
       <div class="item-container" *ngFor="let item of ourItems; let i = index" [attr.data-index]="i" [@itemEnter]="state">
         <div class="identifier"></div>
         <p>{{ item }}</p>
-        <a>X</a>
+        <a (click)="removeItem($event, i)">X</a>
       </div>
     </div>
   </div>

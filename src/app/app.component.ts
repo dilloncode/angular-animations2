@@ -48,7 +48,6 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
         animate('300ms ease-out')
       ]),
       transition('* => void', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
         animate('300ms ease-out', style({ transform: 'scaleY(0) translateY(200px)' }))
       ])
     ])
@@ -71,5 +70,9 @@ export class AppComponent {
   submitItem(event) {
     this.ourItems.push(event.target.value);
     event.target.value = '';
+  }
+
+  removeItem(event, i) {
+    this.ourItems.splice(i, 1);
   }
 }
